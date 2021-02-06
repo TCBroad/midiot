@@ -1,0 +1,14 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Midiot", "Midiot\Midiot.csproj", "{2E649522-7FDD-409F-91DA-2037DE43CEFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E649522-7FDD-409F-91DA-2037DE43CEFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E649522-7FDD-409F-91DA-2037DE43CEFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+EndGlobal
