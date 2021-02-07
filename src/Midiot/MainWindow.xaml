@@ -44,6 +44,12 @@
         </Grid>
         <Label Content="Command list" />
         <ListView Name="CommandList" Height="140">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Label" DisplayMemberBinding="{Binding Label}" />
+                    <GridViewColumn Header="Commands" DisplayMemberBinding="{Binding Commands}"/>
+                </GridView>
+            </ListView.View>
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="Focusable" Value="false"/>

@@ -74,18 +74,15 @@
             }
         }
 
-        private static IEnumerable<string> FormatCommandList(IEnumerable<string> commandList)
+        private static IEnumerable<CommandItem> FormatCommandList(IEnumerable<string> commandList)
         {
-            var commands = commandList.ToList();
-            var widest = commands.Max(x => x.LastIndexOf("]", StringComparison.OrdinalIgnoreCase));
-
-            foreach (var command in commands)
-            {
-                var commandParts = command.Split("]");
-                var padding = string.Concat(Enumerable.Repeat(" ", widest - commandParts[0].Length + 1));
-
-                yield return $"{commandParts[0].ToUpperInvariant()}]{padding}{commandParts[1]}";
-            }
+            return commandList
+                .Select(command => command.Split("]"))
+                .Select(commandParts => new CommandItem
+                {
+                    Label = commandParts[0].TrimStart('[').ToUpperInvariant(),
+                    Commands = commandParts[1]
+                });
         }
 
         private void StopButtonOnClick(object sender, RoutedEventArgs e)
@@ -141,5 +138,12 @@
 
             base.OnClosing(e);
         }
+    }
+
+    public class CommandItem
+    {
+        public string Label { get; set; }
+
+        public string Commands { get; set; }
     }
 }
