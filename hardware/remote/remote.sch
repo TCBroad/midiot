@@ -1,0 +1,284 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATtiny:ATtiny85-20PU U1
+U 1 1 607A3648
+P 4800 2800
+F 0 "U1" H 4271 2846 50  0000 R CNN
+F 1 "ATtiny85-20PU" H 4271 2755 50  0000 R CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 4800 2800 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" H 4800 2800 50  0001 C CNN
+	1    4800 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 607A49C1
+P 6950 2600
+F 0 "D1" H 6950 2850 50  0000 C CNN
+F 1 "LED" H 6950 2750 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 6950 2600 50  0001 C CNN
+F 3 "~" H 6950 2600 50  0001 C CNN
+	1    6950 2600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Switch:SW_Push SW1
+U 1 1 607A74A1
+P 6050 2950
+F 0 "SW1" H 6050 3235 50  0000 C CNN
+F 1 "SW_Push" H 6050 3144 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x01_P2.54mm_Vertical" H 6050 3150 50  0001 C CNN
+F 3 "~" H 6050 3150 50  0001 C CNN
+	1    6050 2950
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Jack-DC J1
+U 1 1 607A7E88
+P 1000 2200
+F 0 "J1" H 1057 2525 50  0000 C CNN
+F 1 "5V" H 1057 2434 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x01_P2.54mm_Vertical" H 1050 2160 50  0001 C CNN
+F 3 "~" H 1050 2160 50  0001 C CNN
+	1    1000 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 2200 4800 2100
+Wire Wire Line
+	4800 3400 4800 3500
+Wire Wire Line
+	5400 2700 6050 2700
+Wire Wire Line
+	6050 2700 6050 2750
+$Comp
+L Device:R_US R1
+U 1 1 607B2817
+P 6450 2600
+F 0 "R1" V 6700 2650 50  0000 C CNN
+F 1 "220" V 6600 2600 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 6490 2590 50  0001 C CNN
+F 3 "~" H 6450 2600 50  0001 C CNN
+	1    6450 2600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6800 2600 6600 2600
+Wire Wire Line
+	6300 2600 5400 2600
+Wire Wire Line
+	6050 3150 6050 3500
+Wire Wire Line
+	7200 3500 7200 2600
+Wire Wire Line
+	7200 2600 7100 2600
+Wire Wire Line
+	5400 2500 7300 2500
+NoConn ~ 5400 2800
+NoConn ~ 5400 2900
+NoConn ~ 5400 3000
+Wire Wire Line
+	1450 2100 1300 2100
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 607BF4DB
+P 1450 2100
+F 0 "#FLG0101" H 1450 2175 50  0001 C CNN
+F 1 "PWR_FLAG" H 1450 2273 50  0000 C CNN
+F 2 "" H 1450 2100 50  0001 C CNN
+F 3 "~" H 1450 2100 50  0001 C CNN
+	1    1450 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R2
+U 1 1 607D51E1
+P 7100 2100
+F 0 "R2" V 7350 2150 50  0000 C CNN
+F 1 "220" V 7250 2100 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 7140 2090 50  0001 C CNN
+F 3 "~" H 7100 2100 50  0001 C CNN
+	1    7100 2100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6950 2100 4800 2100
+$Comp
+L Device:R_US R3
+U 1 1 607D751B
+P 7450 2500
+F 0 "R3" V 7700 2550 50  0000 C CNN
+F 1 "220" V 7600 2500 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 7490 2490 50  0001 C CNN
+F 3 "~" H 7450 2500 50  0001 C CNN
+	1    7450 2500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7600 2500 7650 2500
+$Comp
+L Connector_Generic:Conn_01x02 J2
+U 1 1 607DFC70
+P 7850 2300
+F 0 "J2" H 7930 2292 50  0000 L CNN
+F 1 "Conn_01x02" H 7930 2201 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x01_P2.54mm_Vertical" H 7850 2300 50  0001 C CNN
+F 3 "~" H 7850 2300 50  0001 C CNN
+	1    7850 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7650 2500 7650 2400
+Wire Wire Line
+	7650 2300 7650 2100
+Wire Wire Line
+	7650 2100 7250 2100
+$Comp
+L power:GNDREF #PWR0101
+U 1 1 607E3A2E
+P 3000 3200
+F 0 "#PWR0101" H 3000 2950 50  0001 C CNN
+F 1 "GNDREF" H 3005 3027 50  0000 C CNN
+F 2 "" H 3000 3200 50  0001 C CNN
+F 3 "" H 3000 3200 50  0001 C CNN
+	1    3000 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 2400 3000 3200
+Wire Wire Line
+	1300 2300 1450 2300
+$Comp
+L power:GNDREF #PWR0102
+U 1 1 607E589D
+P 4800 3500
+F 0 "#PWR0102" H 4800 3250 50  0001 C CNN
+F 1 "GNDREF" H 4805 3327 50  0000 C CNN
+F 2 "" H 4800 3500 50  0001 C CNN
+F 3 "" H 4800 3500 50  0001 C CNN
+	1    4800 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR0103
+U 1 1 607E60AA
+P 6050 3500
+F 0 "#PWR0103" H 6050 3250 50  0001 C CNN
+F 1 "GNDREF" H 6055 3327 50  0000 C CNN
+F 2 "" H 6050 3500 50  0001 C CNN
+F 3 "" H 6050 3500 50  0001 C CNN
+	1    6050 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR0104
+U 1 1 607E6580
+P 7200 3500
+F 0 "#PWR0104" H 7200 3250 50  0001 C CNN
+F 1 "GNDREF" H 7205 3327 50  0000 C CNN
+F 2 "" H 7200 3500 50  0001 C CNN
+F 3 "" H 7200 3500 50  0001 C CNN
+	1    7200 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 607C0CB9
+P 1450 2300
+F 0 "#FLG0102" H 1450 2375 50  0001 C CNN
+F 1 "PWR_FLAG" H 1450 2473 50  0000 C CNN
+F 2 "" H 1450 2300 50  0001 C CNN
+F 3 "~" H 1450 2300 50  0001 C CNN
+	1    1450 2300
+	-1   0    0    1   
+$EndComp
+Connection ~ 1450 2300
+Wire Wire Line
+	1450 2300 1650 2300
+$Comp
+L Regulator_Linear:LM7805_TO220 U2
+U 1 1 607EB10B
+P 3000 2100
+F 0 "U2" H 3000 2342 50  0000 C CNN
+F 1 "LM7805_TO220" H 3000 2251 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 3000 2325 50  0001 C CIN
+F 3 "https://www.onsemi.cn/PowerSolutions/document/MC7800-D.PDF" H 3000 2050 50  0001 C CNN
+	1    3000 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C1
+U 1 1 607ECD8A
+P 2450 2250
+F 0 "C1" H 2565 2296 50  0000 L CNN
+F 1 "220n" H 2565 2205 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 2488 2100 50  0001 C CNN
+F 3 "~" H 2450 2250 50  0001 C CNN
+	1    2450 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 607EE685
+P 3550 2250
+F 0 "C2" H 3665 2296 50  0000 L CNN
+F 1 "100n" H 3665 2205 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 3588 2100 50  0001 C CNN
+F 3 "~" H 3550 2250 50  0001 C CNN
+	1    3550 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:1N4001 D2
+U 1 1 607EF3B0
+P 1950 2250
+F 0 "D2" V 1996 2170 50  0000 R CNN
+F 1 "1N4001" V 1905 2170 50  0000 R CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 1950 2075 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 1950 2250 50  0001 C CNN
+	1    1950 2250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3300 2100 3550 2100
+Connection ~ 4800 2100
+Connection ~ 3550 2100
+Wire Wire Line
+	3550 2100 4800 2100
+Wire Wire Line
+	2700 2100 2450 2100
+Wire Wire Line
+	1450 2100 1950 2100
+Connection ~ 1450 2100
+Connection ~ 2450 2100
+Connection ~ 1950 2100
+Wire Wire Line
+	1950 2100 2450 2100
+Wire Wire Line
+	1950 2400 2450 2400
+Connection ~ 2450 2400
+Wire Wire Line
+	2450 2400 3000 2400
+Connection ~ 3000 2400
+Wire Wire Line
+	3000 2400 3550 2400
+Wire Wire Line
+	1950 2400 1650 2400
+Wire Wire Line
+	1650 2400 1650 2300
+Connection ~ 1950 2400
+$EndSCHEMATC
