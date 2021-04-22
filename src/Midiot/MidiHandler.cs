@@ -106,7 +106,7 @@ namespace Midiot
                 return;
             }
 
-            if (this.current >= this.commands.Count)
+            if (this.current > this.commands.Count)
             {
                 return;
             }

@@ -6,58 +6,72 @@
         xmlns:local="clr-namespace:Midiot"
         mc:Ignorable="d"
         Title="Midiot" Height="400" Width="525" ResizeMode="CanMinimize">
-    <StackPanel Margin="10">
-        <Grid HorizontalAlignment="Stretch">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinitions>
+    <Grid>
+        <DockPanel >
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Load" Click="LoadButtonOnClick" />
+                    <Separator />
+                    <MenuItem Header="_Exit" Click="Exit"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
 
-            <Button Content="Load" Grid.Column="0" Name="LoadButton" />
-            <Button Content="Start" Grid.Column="2" Name="StartButton" />
-            <Button Content="Stop" Grid.Column="4" Name="StopButton" />
-        </Grid>
+        <StackPanel Margin="10,25,10,10">
 
-        <Grid HorizontalAlignment="Stretch" Margin="0 10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-            </Grid.RowDefinitions>
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
 
-            <Label Content="Midi input:" Target="{Binding ElementName=MidiInput}" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" />
-            <ComboBox Name="MidiInput" Grid.Column="1" Grid.Row="0" />
+                <Button Content="Load" Grid.Column="0" Name="LoadButton" />
+                <Button Content="Start" Grid.Column="2" Name="StartButton" />
+                <Button Content="Stop" Grid.Column="4" Name="StopButton" />
+            </Grid>
 
-            <Label Content="Midi output:" Target="{Binding ElementName=MidiOutput}" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" />
-            <ComboBox Name="MidiOutput" Grid.Column="1" Grid.Row="1" />
+            <Grid HorizontalAlignment="Stretch" Margin="0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
 
-            <Label Content="Send first command on start:" Target="{Binding ElementName=SendInitial}" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" />
-            <CheckBox Name="SendInitial" Grid.Column="1" Grid.Row="2" IsChecked="True" VerticalAlignment="Center" />
+                <Label Content="Midi input:" Target="{Binding ElementName=MidiInput}" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" />
+                <ComboBox Name="MidiInput" Grid.Column="1" Grid.Row="0" />
 
-        </Grid>
-        <Label Content="Command list" />
-        <ListView Name="CommandList" Height="140">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Label" DisplayMemberBinding="{Binding Label}" />
-                    <GridViewColumn Header="Commands" DisplayMemberBinding="{Binding Commands}"/>
-                </GridView>
-            </ListView.View>
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="Focusable" Value="false"/>
-                </Style>
-            </ListView.ItemContainerStyle>
-        </ListView>
+                <Label Content="Midi output:" Target="{Binding ElementName=MidiOutput}" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" />
+                <ComboBox Name="MidiOutput" Grid.Column="1" Grid.Row="1" />
 
-        <Label Content="Current command" />
-        <TextBox IsReadOnly="True" Name="CurrentCommand" />
-    </StackPanel>
+                <Label Content="Send first command on start:" Target="{Binding ElementName=SendInitial}" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" />
+                <CheckBox Name="SendInitial" Grid.Column="1" Grid.Row="2" IsChecked="True" VerticalAlignment="Center" />
+
+            </Grid>
+            <Label Content="Command list" />
+            <ListView Name="CommandList" Height="140">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Label" DisplayMemberBinding="{Binding Label}" />
+                        <GridViewColumn Header="Commands" DisplayMemberBinding="{Binding Commands}" />
+                    </GridView>
+                </ListView.View>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Focusable" Value="false" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+
+            <Label Content="Current command" />
+            <TextBox IsReadOnly="True" Name="CurrentCommand" />
+        </StackPanel>
+    </Grid>
+
 </Window>

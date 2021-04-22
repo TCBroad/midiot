@@ -138,6 +138,11 @@
 
             base.OnClosing(e);
         }
+
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 
     public class CommandItem
